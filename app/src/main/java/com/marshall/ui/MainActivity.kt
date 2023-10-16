@@ -26,6 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.marshall.data.CryptoCurrency
 import com.marshall.ui.theme.MarshallTheme
 
@@ -47,7 +48,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun HomeScreen(viewModel: MainViewModel = MainViewModel()) {
+fun HomeScreen(viewModel: MainViewModel = hiltViewModel()) {
     val cryptoResult by remember { viewModel.getAllCryptoCurrencies() }.collectAsState(initial = null)
     CryptoListView(cryptoResult)
 }

@@ -3,13 +3,13 @@ package com.marshall.data.remote
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.HttpUrl
-import okhttp3.HttpUrl.Companion.toHttpUrl
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import javax.inject.Inject
 
-class CryptoRemoteDataSource(
-    private val serviceURL: HttpUrl = "https://api.wazirx.com/".toHttpUrl()
+class CryptoRemoteDataSource @Inject constructor(
+    private val serviceURL: HttpUrl
 ) {
 
     private val apiService by lazy {

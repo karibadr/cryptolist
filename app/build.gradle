@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.hilt.android)
+
 }
 
 android {
@@ -37,7 +40,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.5.1'
+        kotlinCompilerExtensionVersion '1.5.3'
     }
     packaging {
         resources {
@@ -65,10 +68,20 @@ dependencies {
     implementation libs.retrofit.converter.moshi
     implementation libs.okhttp3
 
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.junit.ktx
+    ksp(libs.hilt.compiler)
+
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
     //Test
     testImplementation libs.junit
     testImplementation libs.google.truth
     testImplementation libs.mockwebserver
+    testImplementation(libs.robolectric)
     androidTestImplementation libs.androidx.test.ext.junit
     androidTestImplementation libs.espresso.core
     androidTestImplementation platform(libs.compose.bom)
