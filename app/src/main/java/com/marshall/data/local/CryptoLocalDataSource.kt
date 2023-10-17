@@ -9,7 +9,7 @@ class CryptoLocalDataSource @Inject constructor(database: CryptoDatabase) {
 
     private val cryptoDAO = database.cryptoCurrencyDao()
 
-    suspend fun getCryptos(): Flow<List<CryptoEntity?>> =
+    suspend fun getCryptos(): Flow<List<CryptoEntity>> =
         cryptoDAO.getAllCryptos()
 
 

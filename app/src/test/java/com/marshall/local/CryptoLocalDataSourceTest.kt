@@ -43,8 +43,8 @@ import org.robolectric.RobolectricTestRunner
     @Test
     fun `overwrite crypto currencies`() = runBlocking {
         localDataSourceTest.updateCryptos(localCryptoCurrencies())
-        val result = localDataSourceTest.getCryptos().first().count()
-        assertThat(result).isEqualTo(localCryptoCurrencies().size)
+        val result = localDataSourceTest.getCryptos().first()
+        assertThat(result.size).isEqualTo(localCryptoCurrencies().size)
     }
 
 }
