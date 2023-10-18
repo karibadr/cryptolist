@@ -36,3 +36,11 @@ The UI module has all user interface components, including viewmodel. The ViewMo
 `Unit Tests`: Add unit tests for the repository, ensuring that data retrieval and processing are reliable and error-free.
 
 `UI Tests`: Implement UI tests to validate the app's functionality,.
+
+
+## APK
+Debug app: https://github.com/karibadr/cryptolist/blob/main/assets/app-debug.apk
+
+## Screenshots
+<img width="295" alt="Screenshot 2023-10-18 at 03 18 16" src="https://github.com/karibadr/cryptolist/assets/3876922/1a52309e-49bf-4751-84bd-35952727b7b6">
+
